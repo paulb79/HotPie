@@ -3,7 +3,15 @@ html
   head
     title= "Hot Pie - " + title
     link(rel='stylesheet', href='/stylesheets/#{stylesheet}.css')
+
   body
     #header
       h1= title
+      
+    if (message)
+      if message.info
+        p= message.info
+      if message.error
+        p= message.error
+        
     block content

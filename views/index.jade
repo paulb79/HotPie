@@ -1,0 +1,20 @@
+!!!
+html
+  head
+    title= "Hot Pie - index"
+
+
+  body
+    h1= "Index"
+    
+    if typeof flash != 'undefined'
+      if flash.info
+        p= flash.info
+      if flash.error
+        p= flash.error
+
+    p= "Hi Paul"
+
+    if (message)
+      p= message
+      
