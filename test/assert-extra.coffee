@@ -6,7 +6,7 @@ assert.hasTag = (xml, xpath, expected, message) ->
   doc = libxmljs.parseHtmlString xml
   element = doc.find(xpath)
   if element[0] is undefined
-    throw new Error "XPath '#{xpath}' was not found in the document."
+    throw new Error "XPath '#{xpath}' was not found in the document. #{doc} #{xml}"
   else if not (expected is element[0].text())
     assert.fail xml, expected, message || "expected #{xml} to have xpath #{xpath} with content #{expected}", "hasTag", assert.hasTag
 

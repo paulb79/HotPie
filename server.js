@@ -39,7 +39,7 @@ app.configure('development', function(){
 
 app.configure('test', function() {
   app.set('port', 3001);
-  app.use(express.errorHandler());
+  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 
 app.configure('production', function() {
@@ -59,3 +59,4 @@ app.get('/', function(req, res) {
 
 app.listen(app.settings.port);
 console.log("Express server listening on port %d in %s mode", app.settings.port, app.settings.env);
+

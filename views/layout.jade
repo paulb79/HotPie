@@ -10,8 +10,10 @@ html
       
     if (message)
       if message.info
-        p= message.info
+        p.flash(class='info')
+          = message.info
       if message.error
-        p= message.error
+        p.flash(class='error') 
+          = message.error
         
     block content
